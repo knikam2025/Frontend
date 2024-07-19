@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import dotenv from 'dotenv';
-
 
 
 
@@ -10,7 +8,10 @@ const App = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(process.env.URL);
+      const response = await axios.get(import.meta.env.VITE_URL);
+      
+      // console.log(import.meta.env.VITE_URL)
+
       setData(response.data); 
     } catch (error) {
       console.error('Error fetching data:', error);
