@@ -8,9 +8,8 @@ const App = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(import.meta.env.VITE_URL);
+      const response = await axios.get(import.meta.env.URL);
       
-      // console.log(import.meta.env.VITE_URL)
 
       setData(response.data); 
     } catch (error) {
